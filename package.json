@@ -1,27 +1,42 @@
 {
-  "name": "geek4geek.api-internal",
+  "name": "nodejs-api-structure",
   "version": "1.0.0",
-  "description": "API Geek4Geek",
-  "main": "app.js",
+  "description": "Project structure nodejs",
+  "main": "src/app.ts",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-rescue": "^1.1.5",
+    "filter-files": "^0.4.0",
+    "is-directory": "^0.3.1",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.0",
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.11.3",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10",
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.3333"
+  },
   "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node dist/src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node app.js"
+    "postinstall": "node bin/npm-postinstall.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RafaelGSS/geek4geek.api-internal.git"
+    "url": "git+https://github.com/RafaelGSS/nodejs-api-structure.git"
   },
-  "author": "RafaelGSS",
-  "license": "ISC",
+  "author": "Rafael Gonzaga",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RafaelGSS/geek4geek.api-internal/issues"
+    "url": "https://github.com/RafaelGSS/nodejs-api-structure/issues"
   },
-  "homepage": "https://github.com/RafaelGSS/geek4geek.api-internal#readme",
-  "dependencies": {
-    "dotenv": "^6.2.0",
-    "express": "^4.16.4",
-    "mysql2": "^1.6.5",
-    "sequelize": "^4.42.0",
-    "sequelize-cli": "^5.4.0"
-  }
+  "homepage": "https://github.com/RafaelGSS/nodejs-api-structure#readme"
 }
