@@ -1,9 +1,13 @@
 import { DBConnection } from "../connections/structures/DBConnection";
 
-export abstract class Repository {
+export class BookRepository {
     protected readonly connection: DBConnection;
 
     constructor(connection: DBConnection) {
         this.connection = connection;
+    }
+
+    async all() {
+        
     }
 }

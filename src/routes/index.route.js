@@ -1,5 +1,3 @@
-const handler = require("../handlers/home");
-
 module.exports = (app) => {
-    app.get("/", handler.home());
+    app.get("/", (req, res) => res.json(res.data));
 };

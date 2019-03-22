@@ -1,7 +1,8 @@
 import { DBModel } from "./DBModel";
 
 export abstract class DBConnection {
-    private model: DBModel;
+    protected model: DBModel;
+    protected conn: any;
 
     constructor(model: DBModel) {
         this.model = model;

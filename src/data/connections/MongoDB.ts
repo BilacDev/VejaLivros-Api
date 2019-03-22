@@ -1,7 +1,6 @@
-// EXAMPLE OF CLASS CONSUMES
-
 import { DBConnection } from "./structures/DBConnection";
 import { DBModel } from "./structures/DBModel";
+import mongoose from "mongoose";
 
 export class MongoDB extends DBConnection {
     constructor(
@@ -23,7 +22,19 @@ export class MongoDB extends DBConnection {
     }
 
     public connect() {
+        mongoose.connect(this.model.DBUri(), { useNewUrlParser: true });
+        mongoose.set('debug', true);
+
+        // Get Mongoose to use the global promise library
+        mongoose.Promise = global.Promise;
+        
+        this.conn = mongoose.connection
+        this.conn.onError('error', this.onError)
         // tslint:disable-next-line:no-console
         console.log("Connecting MONGODB");
+    }
+
+    public onError() : void {
+        console.error.bind(console, 'MongoDB connection error:')
     }
 }

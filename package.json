@@ -4,12 +4,14 @@
   "description": "Project structure nodejs",
   "main": "src/app.ts",
   "dependencies": {
+    "@types/mongoose": "^5.3.23",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-rescue": "^1.1.5",
     "filter-files": "^0.4.0",
     "is-directory": "^0.3.1",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.19"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.0",
