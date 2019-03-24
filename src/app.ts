@@ -1,15 +1,19 @@
 import { config } from "dotenv";
+config();
 import express from "express";
 import path from "path";
-import registerRoutes from "../config/routes";
-import builderResponseMiddleware from "./middlewares";
 
-config();
+import registerRoutes from "../config/routes";
+
+import builderResponseMiddleware from "./middlewares";
+import dependencyInjectionMiddleware from "./middlewares/dependencyInjection";
 
 const app = express();
 
 // Base response middleware
 app.use(builderResponseMiddleware);
+// DI
+app.use(dependencyInjectionMiddleware);
 
 // Boot routes
 registerRoutes(app, path.join(__dirname, "./routes"));

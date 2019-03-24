@@ -1,8 +1,4 @@
-
-import { createBookRepository } from "../data/repositories/factory"
 const rescue = require("express-rescue");
-
-const bookRepository = createBookRepository();
 
 const handler = {
     // Home
@@ -13,11 +9,13 @@ const handler = {
                 next();
             },
             rescue(async (req, res) => {
-                bookRepository.all().then(books => 
-                    res.json(res.setData(books))
-                )
+                req.$repositories.book.all().then(books =>
+                    res.json(res.setData(books)),
+                );
             }),
             (error, req, res, next) => {
+                // tslint:disable-next-line:no-console
+                console.log(error);
                 res.json(
                     res.setErrorMessage("A error ocurred"),
                 );

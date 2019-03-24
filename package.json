@@ -4,6 +4,7 @@
   "description": "Project structure nodejs",
   "main": "src/app.ts",
   "dependencies": {
+    "@types/mongodb": "^3.1.22",
     "@types/mongoose": "^5.3.23",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
@@ -11,6 +12,7 @@
     "filter-files": "^0.4.0",
     "is-directory": "^0.3.1",
     "lodash": "^4.17.11",
+    "mongodb": "^3.2.2",
     "mongoose": "^5.4.19"
   },
   "devDependencies": {
