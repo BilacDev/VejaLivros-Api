@@ -1,11 +1,11 @@
-# nodejs-api-structure
-Project structure nodejs
+# VejaLivros API
 
-## Getting Started
+Installing dependencies
 ```
 npm install
 ```
 
+Running
 ```
-npm run start
+npm run dev
 ```
