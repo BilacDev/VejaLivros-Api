@@ -1,7 +1,7 @@
 {
-  "name": "geek4geek.api-internal",
+  "name": "VejaLivros-API",
   "version": "1.0.0",
-  "description": "API Geek4Geek",
+  "description": "API VejaLivros",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,27 +9,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RafaelGSS/geek4geek.api-internal.git"
+    "url": "git+https://github.com/BilacDev/VejaLivros-API.git"
   },
   "author": "RafaelGSS",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RafaelGSS/geek4geek.api-internal/issues"
+    "url": "https://github.com/BilacDev/VejaLivros-API/issues"
   },
-  "homepage": "https://github.com/RafaelGSS/geek4geek.api-internal#readme",
+  "homepage": "https://github.com/BilacDev/VejaLivros-API#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.0",
     "moment": "^2.24.0",
-    "mongoose": "^5.4.19",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
     "sequelize": "^4.42.0",
-    "sequelize-cli": "^5.4.0",
-    "swagger-jsdoc": "^3.2.7",
-    "swagger-ui-express": "^4.0.2"
+    "sequelize-cli": "^5.4.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

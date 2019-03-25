@@ -1,10 +1,9 @@
 const router = require('express').Router()
-const book = require('../../../models/books')
+const models = require('../../../models')
 
 router.get('/', (req, res) => {
-    book.find({})
-    .then(data => res.json(data))
-    .catch(err => res.json({ error: true, data: err }))
+    models.books.findAll({})
+    .then(books => res.json(res.setData(books)))
 })
 
 module.exports = router;

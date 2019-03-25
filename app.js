@@ -1,14 +1,7 @@
 // Entrypoint of application
 require('dotenv').config()
 // Init connection with database
-require('./src/services/mongodb')
-
 const app = require('express')()
-
-const bodyParser = require('body-parser')
-
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 const port = process.env.PORT || 4000
 
