@@ -1,11 +1,12 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('books', {
+  const Books = sequelize.define('books', {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     id_author: {
       type: DataTypes.INTEGER(11),
@@ -23,6 +24,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: false
     },
+    keywords: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
     created_at: {
       type: DataTypes.DATE,
       allowNull: true,
@@ -31,4 +36,8 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'books'
   });
+  Books.associate = (models) => {
+    Books.belongsTo(models.authors, { foreignKey: "id_author"})
+  }
+ return Books 
 };
