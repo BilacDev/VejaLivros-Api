@@ -24,8 +24,15 @@ router.put('/:id', (req, res) => {
     const id = req.params.id
 
     models.books.update(body, { where: { id: id } })
-    .then(book => res.json(res.setData(book)))
-    .catch(error => res.json(res.setError(error)))
+        .then(book => res.json(res.setData(book)))
+        .catch(error => res.json(res.setError(error)))
 })
 
+// Deleta um livro
+router.delete('/:id', (req, res) => {
+    models.books.destroy({
+        where: { id: req.params.id }
+    }).then(id => res.json(res.setData(id)))
+    .catch(error => res.json(res.setError(error)))
+})
 module.exports = router;
