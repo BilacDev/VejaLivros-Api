@@ -1,0 +1,19 @@
+{
+    "apps": [
+        {
+            "name": "veja-livros-api",
+            "script": "./app.js",
+            "watch": false,
+            "merge_logs": true,
+            "autorestart": true,
+            "max_restarts": 30,
+            "log_date_format": "YYYY-MM-DD HH:mm",
+            "error_file": "./var/logs/err.log",
+            "out_file": "./var/logs/out.log",
+            "pid_file": "./var/logs/app.pid",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    ]
+}
