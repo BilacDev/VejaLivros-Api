@@ -15,7 +15,9 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const { body } = req
 
-    models.books.create(body).then(id => res.setData(id)).catch(error => res.setError(error))
+    models.books.create(body)
+        .then(id => res.json(res.setData(id)))
+        .catch(error => res.json(res.setError(error)))
 })
 
 // Altera um livro
@@ -33,6 +35,6 @@ router.delete('/:id', (req, res) => {
     models.books.destroy({
         where: { id: req.params.id }
     }).then(id => res.json(res.setData(id)))
-    .catch(error => res.json(res.setError(error)))
+        .catch(error => res.json(res.setError(error)))
 })
 module.exports = router;
