@@ -34,7 +34,8 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, {
-    tableName: 'books'
+    tableName: 'books',
+    timestamps: false
   });
   Books.associate = (models) => {
     Books.belongsTo(models.authors, { foreignKey: "id_author"})
